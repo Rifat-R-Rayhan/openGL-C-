@@ -1,6 +1,10 @@
+#include <iostream>
+#include <stdlib.h>
 #include <GL/gl.h>
 #include <GL/glut.h>
 #include<math.h>
+
+static GLfloat spin = 0.0;
 
 
 void house(){
@@ -107,49 +111,126 @@ void river(){
 	glEnd();
 }
 
-void fan(){
+void river_bank(){
+    glBegin(GL_QUADS);
 
-    glBegin(GL_QUADS); //Begin quadrilateral coordinates
-	glColor3f (1.0, 1.0, 1.0);
+	glColor3f (0.2, 0.2, 0.2);
 
-	glVertex3f(0.75f, 0.23f, 0.0f);
-	glVertex3f(0.77f, 0.23f, 0.0f);
-	glVertex3f(0.77f, 0.35f, 0.0f);
-	glVertex3f(0.75f, 0.35f, 0.0f);
-
-	glEnd();
-
-	glBegin(GL_QUADS); //Begin quadrilateral coordinates
-	glColor3f (1.0, 1.0, 1.0);
-
-	glVertex3f(0.7f, 0.34f, 0.0f);
-	glVertex3f(0.76f, 0.34f, 0.0f);
-	glVertex3f(0.76f, 0.36f, 0.0f);
-	glVertex3f(0.7f, 0.36f, 0.0f);
+	glVertex3f(0.0f, 0.2f, 0.0f);
+	glVertex3f(0.8f, 0.2f, 0.0f);
+	glVertex3f(0.8f, 0.18f, 0.0f);
+	glVertex3f(0.0f, 0.18f, 0.0f);
 
 	glEnd();
 
-	glBegin(GL_QUADS); //Begin quadrilateral coordinates
-	glColor3f (1.0, 1.0, 1.0);
+	glBegin(GL_QUADS);
 
-	glVertex3f(0.75f, 0.34f, 0.0f);
-	glVertex3f(0.77f, 0.34f, 0.0f);
-	glVertex3f(0.77f, 0.4f, 0.0f);
-	glVertex3f(0.75f, 0.4f, 0.0f);
+	glColor3f (0.2, 0.2, 0.2);
 
-	glEnd();
-
-	glBegin(GL_QUADS); //Begin quadrilateral coordinates
-	glColor3f (1.0, 1.0, 1.0);
-
-	glVertex3f(0.76f, 0.34f, 0.0f);
-	glVertex3f(0.82f, 0.34f, 0.0f);
-	glVertex3f(0.82f, 0.36f, 0.0f);
-	glVertex3f(0.76f, 0.36f, 0.0f);
+	glVertex3f(0.78f, 0.0f, 0.0f);
+	glVertex3f(0.8f, 0.0f, 0.0f);
+	glVertex3f(0.8f, 0.2f, 0.0f);
+	glVertex3f(0.78f, 0.2f, 0.0f);
 
 	glEnd();
-
 }
+
+float  counter=0.08;
+void boat(){
+   /* glLoadIdentity();
+    counter=counter-0.0001;
+    glTranslated(counter,-1.0,0.0);*/
+
+    glBegin(GL_QUADS);
+
+	//boat
+	glColor3f(0.0f, 1.0f, 1.0f);
+	glVertex3f(0.2f, 0.06f, 0.0f);
+	glVertex3f(0.4f, 0.06f, 0.0f);
+	glVertex3f(0.4f, 0.09f, 0.0f);
+	glVertex3f(0.2f, 0.09f, 0.0f);
+
+	glEnd();
+
+	glBegin(GL_QUADS);
+
+	//boat
+	glColor3f(0.0f, 0.7f, 0.7f);
+	glVertex3f(0.2f, 0.03f, 0.0f);
+	glVertex3f(0.4f, 0.03f, 0.0f);
+	glVertex3f(0.4f, 0.06f, 0.0f);
+	glVertex3f(0.2f, 0.06f, 0.0f);
+
+	glEnd();
+
+    glBegin(GL_QUADS);
+
+	//BOAT(front)
+	glColor3f(0.0f, 1.0f, 1.0f);
+	glVertex3f(0.1f, 0.11f, 0.0f);
+	glVertex3f(0.2f, 0.06f, 0.0f);
+	glVertex3f(0.2f, 0.09f, 0.0f);
+	glVertex3f(0.1f, 0.11f, 0.0f);
+
+	glEnd();
+
+	    glBegin(GL_QUADS);
+
+	//BOAT(front)
+	glColor3f(0.0f, 0.7f, 0.7f);
+	glVertex3f(0.1f, 0.01f, 0.0f);
+	glVertex3f(0.2f, 0.03f, 0.0f);
+	glVertex3f(0.2f, 0.06f, 0.0f);
+	glVertex3f(0.1f, 0.01f, 0.0f);
+
+	glEnd();
+
+	//BOAT(back)
+	glBegin(GL_QUADS);
+
+
+	glColor3f(0.0f, 1.0f, 1.0f);
+	glVertex3f(0.4f, 0.06f, 0.0f);
+	glVertex3f(0.5f, 0.11f, 0.0f);
+	glVertex3f(0.5f, 0.11f, 0.0f);
+	glVertex3f(0.4f, 0.09f, 0.0f);
+
+	glEnd();
+
+	glBegin(GL_QUADS);
+
+
+	glColor3f(0.0f, 0.7f, 0.7f);
+	glVertex3f(0.4f, 0.06f, 0.0f);
+	glVertex3f(0.5f, 0.01f, 0.0f);
+	glVertex3f(0.5f, 0.01f, 0.0f);
+	glVertex3f(0.4f, 0.03f, 0.0f);
+
+	glEnd();
+
+	//BOAT(up)
+	glBegin(GL_TRIANGLES);
+
+
+	glColor3f(0.7f, 1.0f, 1.0f);
+	glVertex3f(0.25f, 0.07f, 0.0f);
+	glVertex3f(0.35f, 0.07f, 0.0f);
+	glVertex3f(0.3f, 0.1f, 0.0f);
+
+	glEnd();
+
+	//BOAT(up)
+	glBegin(GL_TRIANGLES);
+
+
+	glColor3f(0.7f, 1.0f, 1.0f);
+	glVertex3f(0.25f, 0.03f, 0.0f);
+	glVertex3f(0.35f, 0.03f, 0.0f);
+	glVertex3f(0.3f, 0.01f, 0.0f);
+
+	glEnd();
+}
+
 
 void tree(){
 
@@ -261,6 +342,9 @@ void tree(){
 
 void car(){
 
+    /*glLoadIdentity();
+    counter=counter-0.001;
+    glTranslated(counter,-0.5,0.0);*/
     //car(bottom)
     glBegin(GL_POLYGON);
     glColor3f (0.0, 0.0, 1.0);
@@ -305,20 +389,6 @@ void car(){
     for(int i=0; i<360; i++){
         r = i*3.1416/180;
         glVertex3f(0.65+0.015*cos(r), 0.472+0.015*sin(r), 0);
-    }
-
-
-	glEnd();
-}
-
-void sun(){
-    float r;
-    glBegin(GL_POLYGON);
-    glColor3f (1.0, 1.0, 0.0);
-
-    for(int i=0; i<360; i++){
-        r = i*3.1416/180;
-        glVertex3f(0.65+0.04*cos(r), 0.85+0.04*sin(r), 0);
     }
 
 
@@ -699,40 +769,142 @@ void backWallAdd(){
 	glEnd();
 }
 
+void sun(){
+
+    float r;
+    //glEnable(GL_LIGHTING);
+    glEnable(GL_LIGHT0);
+    glEnable(GL_LIGHT1);
+    glEnable(GL_NORMALIZE);
+
+    GLfloat ambientColor[] = {0.2f, 0.2f, 0.2f, 1.0f};
+    glLightModelfv(GL_LIGHT_MODEL_AMBIENT, ambientColor);
+
+    //Add positioned light
+	GLfloat lightColor0[] = {0.5f, 0.5f, 0.5f, 1.0f}; //Color (0.5, 0.5, 0.5)
+	GLfloat lightPos0[] = {0.57f, 0.96f, 0.0f, 1.0f}; //Positioned at (4, 0, 8)
+	glLightfv(GL_LIGHT0, GL_DIFFUSE, lightColor0);
+	glLightfv(GL_LIGHT0, GL_POSITION, lightPos0);
+
+	//Add directed light
+	GLfloat lightColor1[] = {1.0f, 1.0f, 1.0f, 1.0f}; //Color (0.5, 0.2, 0.2)
+	GLfloat lightPos1[] = {0.2f, 0.9f, 0.0f, 0.0f};
+	glLightfv(GL_LIGHT1, GL_DIFFUSE, lightColor1);
+	glLightfv(GL_LIGHT1, GL_POSITION, lightPos1);
+
+    glBegin(GL_POLYGON);
+    glNormal3f(0.0f, 0.0f, 1.0f);
+    glColor3f(1.0f, 1.0f, 0.0f);
+    glRotatef(360.0f, 0.1f, 0.1f, 0.0f);
+    for(int i=0; i<360; i++){
+        r = i*3.1416/180;
+        glVertex3f(0.55+0.03*cos(r), 0.96+0.03*sin(r), 0);
+    }
+
+    glEnd();
+
+}
+
+void spinSun(void)
+{
+   spin = -.60;
+			glutPostRedisplay();
+			glRotatef(spin, 0.8, 0.8, 1.0);
+}
+
+
 void display()
 {
     /* clear all pixels */
     glClear (GL_COLOR_BUFFER_BIT);
 
     field();
+
     road();
+
     river();
-    fan();
+
+    river_bank();
+
+    glPushMatrix();
+    boat();
+    glPopMatrix();
+
     house();
+
 	tree();
-	car();
-	//sun();
+
+	glPushMatrix();
+    car();
+    glPopMatrix();
+
+	glPushMatrix();
+    sun();
+    glPopMatrix();
+
     building1();
+
     stairs();
+
     wall();
+
     backWall();
+
     backWallAdd();
+
     building2();
 
-
-    glFlush ();
+    glFlush();
 }
 
 
 void init (void)
 {
-/* select clearing (background) color */
-glClearColor (0.0, 0.0, 0.0, 0.0);
-/* initialize viewing values */
-glMatrixMode(GL_PROJECTION);
-glLoadIdentity();
-glOrtho(0.0, 1.0, 0.0, 1.0, -10.0, 10.0);
+    /* select clearing (background) color */
+    glClearColor (0.0, 0.0, 0.0, 0.0);
+    /* initialize viewing values */
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    glMatrixMode(GL_MODELVIEW);
+    glOrtho(0.0, 1.0, 0.0, 1.0, -10.0, 10.0);
 }
+
+int a=0;
+void my_keyboard(unsigned char key, int x, int y)
+{
+
+	switch (key) {
+
+		case 's':
+                {
+                    if(a==0)
+                {
+		            glutIdleFunc(spinSun);
+		             a=1;
+                }
+
+         else
+         {
+              glutIdleFunc(NULL);
+              a=0;
+         }
+         }
+			case 'k':
+			{
+
+
+			glRotatef(-10, 0.0, 0.0, 1.0);
+			       break;
+			}
+            case 'i':
+                glRotatef(3, 0.0, 0.0, 1.0);
+                break;
+
+	  default:
+			break;
+	}
+}
+
 
 int main(int argc, char** argv)
 {
@@ -740,9 +912,12 @@ glutInit(&argc, argv);
 glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB);
 glutInitWindowSize (600, 600);
 glutInitWindowPosition (100, 100);
-glutCreateWindow ("Shape");
+glutCreateWindow ("Rifat_1448");
 init ();
 glutDisplayFunc(display);
+glutIdleFunc(display);
+glutKeyboardFunc(my_keyboard);
+
 glutMainLoop();
 return 0; /* ISO C requires main to return int. */
 }

@@ -1,12 +1,13 @@
 # depslib dependency file v1.0
-1683372146 source:c:\users\rifat r rayhan\desktop\c & c++\basic_shape_1\main.cpp
-	<GL/gl.h>
+1584205426 source:c:\users\rifat r rayhan\desktop\opengl & c++\first\main.cpp
+	<GLUT/glut.h>
 	<GL/glut.h>
-	<math.h>
+	<stdlib.h>
 
-1526093414 c:\program files\codeblocks\mingw\x86_64-w64-mingw32\include\gl\gl.h
+1453865572 c:\program files\codeblocks\mingw\x86_64-w64-mingw32\include\gl\glut.h
 	<windows.h>
-	<stddef.h>
+	<GL/gl.h>
+	<GL/glu.h>
 
 1526093414 c:\program files\codeblocks\mingw\x86_64-w64-mingw32\include\windows.h
 	<_mingw.h>
@@ -857,21 +858,10 @@
 1526093414 c:\program files\codeblocks\mingw\x86_64-w64-mingw32\include\imm.h
 	<_mingw_unicode.h>
 
-1453865572 c:\program files\codeblocks\mingw\x86_64-w64-mingw32\include\gl\glut.h
+1526093414 c:\program files\codeblocks\mingw\x86_64-w64-mingw32\include\gl\gl.h
 	<windows.h>
-	<GL/gl.h>
-	<GL/glu.h>
+	<stddef.h>
 
 1526093414 c:\program files\codeblocks\mingw\x86_64-w64-mingw32\include\gl\glu.h
 	<GL/gl.h>
-
-1526093416 c:\program files\codeblocks\mingw\x86_64-w64-mingw32\include\math.h
-	<crtdefs.h>
-
-1683867795 source:c:\users\rifat r rayhan\desktop\opengl & c++\basic_shape_1\main.cpp
-	<iostream>
-	<stdlib.h>
-	<GL/gl.h>
-	<GL/glut.h>
-	<math.h>
 
